@@ -54,5 +54,22 @@
             var whitespaces = new string(Enumerable.Repeat(' ', requiredSpaces).ToArray());
             return $"{character}{whitespaces}{character}";
         }
+
+        public IReadOnlyList<string> GetDiamondTop(char character)
+        {
+            var characterIndex = Array.IndexOf(Alphabet, character);
+
+            var diamondTop = new List<string>();
+
+            for (var i = 1; i < characterIndex; i++)
+            {
+                var whitespacesBeforeAndAfter = new string(Enumerable.Repeat(' ', characterIndex - i).ToArray());
+                var whitespacesInBetween = new string(Enumerable.Repeat(' ', (i * 2) - 1).ToArray());
+                diamondTop.Add(
+                    $"{whitespacesBeforeAndAfter}{Alphabet[i]}{whitespacesInBetween}{Alphabet[i]}{whitespacesBeforeAndAfter}");
+            }
+
+            return diamondTop;
+        }
     }
 }
