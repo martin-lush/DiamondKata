@@ -22,12 +22,28 @@
 
         public string PrintDiamond(char character)
         {
-            if(Array.IndexOf(Alphabet, character) == -1)
+            var characterIndex = Array.IndexOf(Alphabet, character);
+            if (characterIndex == -1)
             {
                 throw new ArgumentOutOfRangeException(nameof(character), "Not found within the specifed alphabet");
             }
+            else if (characterIndex == 0)
+            {
+                return character.ToString();
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+        }
 
-            return character.ToString();
+        public string GetMiddleLine(char character)
+        {
+            var charIndex = Array.IndexOf(Alphabet, character); 
+            var requiredSpaces = (charIndex * 2) - 1;
+
+            var whitespaces = new string(Enumerable.Repeat(' ', requiredSpaces).ToArray());
+            return $"{character}{whitespaces}{character}";
         }
     }
 }
