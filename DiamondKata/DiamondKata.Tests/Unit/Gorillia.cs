@@ -9,12 +9,9 @@ namespace DiamondKata.Tests.Unit
         [Test]
         public void When_A_Returns_A()
         {
-            StringBuilder sb = new();
-            sb.Append("A");
+            string expectedResult = "A";
 
-            string expectedResult = sb.ToString();
-
-            var result = Diamond.PrintDiamond('A');
+            var result = new Diamond().PrintDiamond('A');
 
             Assert.AreEqual(expectedResult, result);
         }
@@ -29,7 +26,7 @@ namespace DiamondKata.Tests.Unit
 
             string expectedResult = sb.ToString();
 
-            var result = Diamond.PrintDiamond('B');
+            var result = new Diamond().PrintDiamond('B');
 
             Assert.AreEqual(expectedResult, result);
         }
@@ -46,7 +43,7 @@ namespace DiamondKata.Tests.Unit
 
             string expectedResult = sb.ToString();
 
-            var result = Diamond.PrintDiamond('C');
+            var result = new Diamond().PrintDiamond('C');
 
             Assert.AreEqual(expectedResult, result);
         }
