@@ -7,7 +7,7 @@ namespace DiamondKata.Tests.Extensions
     {
         public static string? RemoveWhitespace(this string input)
         {
-            return new string(input?.Where(c => !char.IsWhiteSpace(c)).ToArray());
+            return new string(input?.Where(c => c != ' ').ToArray());
         }
 
         public static string? RemoveNewLines(this string input)
@@ -17,7 +17,7 @@ namespace DiamondKata.Tests.Extensions
 
         public static string? RemoveWhitespaceAndNewLines(this string input)
         {
-            return input.RemoveWhitespace()?.ReplaceLineEndings();
+            return input.RemoveWhitespace()?.RemoveNewLines();
         }
     }
 }
