@@ -37,6 +37,15 @@
             }
         }
 
+        public string GetFirstOrLastLine(char character)
+        {
+            var characterIndex = Array.IndexOf(Alphabet, character);
+            var requiredSpaces = characterIndex;
+
+            var whitespaces = new string(Enumerable.Repeat(' ', requiredSpaces).ToArray());
+            return $"{whitespaces}{Alphabet[0]}{whitespaces}";
+        }
+
         public string GetMiddleLine(char character)
         {
             var charIndex = Array.IndexOf(Alphabet, character); 
