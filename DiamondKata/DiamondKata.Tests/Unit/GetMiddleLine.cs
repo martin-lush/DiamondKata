@@ -37,7 +37,7 @@ namespace DiamondKata.Tests.Unit
         [TestCase('F', 9)]
         public void Should_HaveExpected_Whitespaces(char character, int expectedCount)
         {
-            var result = new Diamond().GetMiddleLine(character).RemoveNewLines();
+            var result = new Diamond().GetMiddleLine(character);
 
             var whitespaceCount = result?.Where(c => char.IsWhiteSpace(c)).Count();
 
