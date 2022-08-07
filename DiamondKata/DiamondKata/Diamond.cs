@@ -1,4 +1,6 @@
-﻿namespace DiamondKata
+﻿using System.Text;
+
+namespace DiamondKata
 {
     public class Diamond
     {
@@ -33,7 +35,20 @@
             }
             else
             {
-                throw new NotImplementedException();
+                var builder = new StringBuilder();
+                builder.AppendLine(GetFirstOrLastLine(character));
+                foreach(string line in GetDiamondTop(character))
+                {
+                    builder.AppendLine(line);
+                }
+                builder.AppendLine(GetMiddleLine(character));
+                foreach (string line in GetDiamondTop(character).Reverse())
+                {
+                    builder.AppendLine(line);
+                }
+                builder.Append(GetFirstOrLastLine(character));
+
+                return builder.ToString();
             }
         }
 
