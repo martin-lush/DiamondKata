@@ -29,7 +29,7 @@ namespace DiamondKata.Tests.Unit
         {
             var sut = new Diamond();
 
-            var result = sut.GetFirstOrLastLine(character).RemoveWhitespace();
+            var result = sut.GetFirstOrLastLine(character);
 
             Assert.IsTrue(result?.All(c => c == sut.Alphabet[0] || char.IsWhiteSpace(c)));
         }
