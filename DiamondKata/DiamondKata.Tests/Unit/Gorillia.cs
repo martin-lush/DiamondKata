@@ -13,7 +13,7 @@ namespace DiamondKata.Tests.Unit
 
             var result = new Diamond().PrintDiamond('A');
 
-            Assert.AreEqual(expectedResult, result);
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
@@ -28,7 +28,7 @@ namespace DiamondKata.Tests.Unit
 
             var result = new Diamond().PrintDiamond('B');
 
-            Assert.AreEqual(expectedResult, result);
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
@@ -45,7 +45,7 @@ namespace DiamondKata.Tests.Unit
 
             var result = new Diamond().PrintDiamond('C');
 
-            Assert.AreEqual(expectedResult, result);
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }

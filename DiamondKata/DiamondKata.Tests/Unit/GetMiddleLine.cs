@@ -15,7 +15,7 @@ namespace DiamondKata.Tests.Unit
         public void Should_Repeat_Character(char character)
         {
             var result = new Diamond().GetMiddleLine(character).RemoveWhitespace();
-            Assert.AreEqual($"{character}{character}", result);
+            Assert.That(result, Is.EqualTo($"{character}{character}"));
         }
 
         [TestCase('B')]
@@ -27,7 +27,7 @@ namespace DiamondKata.Tests.Unit
         {
             var result = new Diamond().GetMiddleLine(character).RemoveWhitespace();
 
-            Assert.IsTrue(result?.All(c => c == character || char.IsWhiteSpace(c)));
+            Assert.That(result?.All(c => c == character || char.IsWhiteSpace(c)), Is.True);
         }
 
         [TestCase('B', 1)]
@@ -41,7 +41,7 @@ namespace DiamondKata.Tests.Unit
 
             var whitespaceCount = result?.Where(c => char.IsWhiteSpace(c)).Count();
 
-            Assert.AreEqual(expectedCount, whitespaceCount);
+            Assert.That(whitespaceCount, Is.EqualTo(expectedCount));
         }
     }
 }

@@ -11,7 +11,7 @@ namespace DiamondKata.Tests.Unit
         [Test]
         public void A_Should_Give_A()
         {
-            Assert.AreEqual("A", new Diamond().PrintDiamond('A'));
+            Assert.That(new Diamond().PrintDiamond('A'), Is.EqualTo("A"));
         }
 
         [Test]
@@ -20,28 +20,28 @@ namespace DiamondKata.Tests.Unit
             var result = new Diamond().PrintDiamond('B').RemoveWhitespaceAndNewLines();
             var distincChars = new string(result?.Distinct().ToArray());
 
-            Assert.AreEqual("AB", distincChars);
+            Assert.That(distincChars, Is.EqualTo("AB"));
         }
 
         [Test]
         public void B_Should_Repeat_Characters()
         {
             var result = new Diamond().PrintDiamond('B').RemoveWhitespaceAndNewLines();
-            Assert.AreEqual("ABBA", result);
+            Assert.That(result, Is.EqualTo("ABBA"));
         }
 
         [Test]
         public void B_Should_Have_Separate_Lines()
         {
             var result = new Diamond().PrintDiamond('B').RemoveWhitespace();
-            Assert.AreEqual($"A{Environment.NewLine}BB{Environment.NewLine}A", result);
+            Assert.That(result, Is.EqualTo($"A{Environment.NewLine}BB{Environment.NewLine}A"));
         }
 
         [Test]
         public void B_Should_Have_Spaces()
         {
             var result = new Diamond().PrintDiamond('B').RemoveNewLines();
-            Assert.AreEqual($" A B B A ", result);
+            Assert.That(result, Is.EqualTo($" A B B A "));
         }
 
 
@@ -52,7 +52,7 @@ namespace DiamondKata.Tests.Unit
             var a = sut.PrintDiamond('A');
             var b = sut.PrintDiamond('B');
 
-            Assert.Greater(b.Length, a.Length);
+            Assert.That(b.Length, Is.GreaterThan(a.Length));
         }
 
         [Test]
@@ -62,7 +62,7 @@ namespace DiamondKata.Tests.Unit
             var b = sut.PrintDiamond('B');
             var c = sut.PrintDiamond('C');
 
-            Assert.Greater(c.Length, b.Length);
+            Assert.That(c.Length, Is.GreaterThan(b.Length));
         }
 
         [Test]
@@ -72,7 +72,7 @@ namespace DiamondKata.Tests.Unit
             var c = sut.PrintDiamond('C');
             var d = sut.PrintDiamond('D');
 
-            Assert.Greater(d.Length, c.Length);
+            Assert.That(d.Length, Is.GreaterThan(c.Length));
         }
     }
 }

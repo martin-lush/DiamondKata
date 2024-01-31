@@ -20,7 +20,7 @@ namespace DiamondKata.Tests.Unit
 
             var result = new Diamond(Settings.Alphabet.UpperEnglishAlphabet).PrintDiamond('C');
 
-            Assert.AreEqual(expectedResult, result);
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace DiamondKata.Tests.Unit
 
             var result = new Diamond(Settings.Alphabet.LowerEnglishAlphabet).PrintDiamond('c');
 
-            Assert.AreEqual(expectedResult, result);
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
@@ -54,7 +54,7 @@ namespace DiamondKata.Tests.Unit
 
             var result = new Diamond(Settings.Alphabet.DecimalAlphabet).PrintDiamond('2');
 
-            Assert.AreEqual(expectedResult, result);
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
 
         [Test]
@@ -71,7 +71,7 @@ namespace DiamondKata.Tests.Unit
 
             var result = new Diamond(Settings.Alphabet.HexidecimalAlphabet).PrintDiamond('2');
 
-            Assert.AreEqual(expectedResult, result);
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }

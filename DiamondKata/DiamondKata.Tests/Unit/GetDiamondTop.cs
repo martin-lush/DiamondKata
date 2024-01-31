@@ -27,7 +27,7 @@ namespace DiamondKata.Tests.Unit
                 var startSubString = line.Substring(start, end);
 
                 var whitespaceCount = startSubString.Where(c => char.IsWhiteSpace(c)).Count();
-                Assert.AreEqual(expectedSpaces[i], whitespaceCount);
+                Assert.That(whitespaceCount, Is.EqualTo(expectedSpaces[i]));
             }
         }
 
@@ -51,7 +51,7 @@ namespace DiamondKata.Tests.Unit
                 var endSubString = line.Substring(start, end);
 
                 var whitespaceCount = endSubString.Where(c => char.IsWhiteSpace(c)).Count();
-                Assert.AreEqual(expectedSpaces[i], whitespaceCount);
+                Assert.That(whitespaceCount, Is.EqualTo(expectedSpaces[i]));
             }
         }
 
@@ -75,7 +75,7 @@ namespace DiamondKata.Tests.Unit
                 var betweenSubString = line.Substring(firstIndex + 1, (lastIndex - firstIndex) - 1);
 
                 var whitespaceCount = betweenSubString.Where(c => char.IsWhiteSpace(c)).Count();
-                Assert.AreEqual(expectedSpaces[i], whitespaceCount);
+                Assert.That(whitespaceCount, Is.EqualTo(expectedSpaces[i]));
             }
         }
 
@@ -94,7 +94,7 @@ namespace DiamondKata.Tests.Unit
             for (int i = 0; i < result.Count; i++)
             {
                 string line = result[i].RemoveWhitespace();
-                Assert.IsTrue(line?.All(c => c == sut.Alphabet[i + 1] || char.IsWhiteSpace(c)));
+                Assert.That(line?.All(c => c == sut.Alphabet[i + 1] || char.IsWhiteSpace(c)), Is.True);
             }
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
         }

@@ -17,7 +17,7 @@ namespace DiamondKata.Tests.Unit
             var sut = new Diamond();
 
             var result = sut.GetFirstOrLastLine(character).RemoveWhitespace();
-            Assert.AreEqual($"{sut.Alphabet[0]}", result);
+            Assert.That(result, Is.EqualTo($"{sut.Alphabet[0]}"));
         }
 
         [TestCase('B')]
@@ -31,7 +31,7 @@ namespace DiamondKata.Tests.Unit
 
             var result = sut.GetFirstOrLastLine(character);
 
-            Assert.IsTrue(result?.All(c => c == sut.Alphabet[0] || char.IsWhiteSpace(c)));
+            Assert.That(result?.All(c => c == sut.Alphabet[0] || char.IsWhiteSpace(c)), Is.True);
         }
 
         [TestCase('B', 1)]
@@ -51,7 +51,7 @@ namespace DiamondKata.Tests.Unit
 
             var whitespaceCount = startSubString.Where(c => char.IsWhiteSpace(c)).Count();
 
-            Assert.AreEqual(expectedCount, whitespaceCount);
+            Assert.That(whitespaceCount, Is.EqualTo(expectedCount));
         }
 
         [TestCase('B', 1)]
@@ -71,7 +71,7 @@ namespace DiamondKata.Tests.Unit
 
             var whitespaceCount = endSubString?.Where(c => char.IsWhiteSpace(c)).Count();
 
-            Assert.AreEqual(expectedCount, whitespaceCount);
+            Assert.That(whitespaceCount, Is.EqualTo(expectedCount));
         }
     }
 }
