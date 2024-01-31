@@ -14,7 +14,7 @@ namespace DiamondKata.Tests.Unit
             Assert.That(result, Is.Not.Null);
         }
 
-        [Test, Timeout(100)]
+        [Test, CancelAfter(100)]
         public void Large_Diamond_Does_Not_Take_Longer_Than_100_Milliseconds()
         {
             var alphabet = Settings.Alphabet.UpperEnglishAlphabet;
